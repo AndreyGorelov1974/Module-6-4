@@ -1,4 +1,4 @@
-﻿/*Задание 4. Счастливый билетик
+/*Задание 4. Счастливый билетик
 Что нужно сделать
 В старину, когда даже в столице билеты в общественном транспорте выдавали контролёры, существовало поверье : если на билете сумма первых трёх цифр в номере билета равна сумме трёх последних,
 то это к удаче.Напишите программу, которая получала бы на вход шестизначный номер билета и выводила, счастливый это билет или нет.К примеру, билеты 666 666 и 252 135 — счастливые, а 123 456 — нет.
@@ -26,7 +26,7 @@ int main()
 	int numberLength = 6;
 	// множитель для разделения номера на две половины
 	int multiplierOfHalf = 1000;
-	
+
 	std::cout << "Введите номер билета (" << numberLength << " цифр): ";
 	int ticketNumber;
 	std::cin >> ticketNumber;
@@ -43,28 +43,9 @@ int main()
 		rightSum += rightHalfOfNumber % 10;
 		rightHalfOfNumber /= 10;
 	}
-	
-	
-	std::cout << leftSum << "\n";
-	std::cout << rightSum << "\n";
 
-
-
-	
-	/*
-	
-	
-	if (totalDebt < 0) { std::cout << "Сумма долга должна быть положительной!\n"; }
-
-	else {
-		
-
-		int accountBalanse = 0;
-		if (totalDebt < 0) accountBalanse = abs(totalDebt);
-
-		
-		if (accountBalanse != 0) std::cout << " На Вашем счету осталось: " << accountBalanse << "\n";
-	}*/
+	if (leftSum == rightSum) std::cout << "Билет счастливый\n";
+	else std::cout << "Билет не счастливый\n";
 
 }
 
