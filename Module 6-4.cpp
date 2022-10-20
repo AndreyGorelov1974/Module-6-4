@@ -1,6 +1,7 @@
 ﻿/*Задание 4. Счастливый билетик
 Что нужно сделать
-В старину, когда даже в столице билеты в общественном транспорте выдавали контролёры, существовало поверье : если на билете сумма первых трёх цифр в номере билета равна сумме трёх последних, то это к удаче.Напишите программу, которая получала бы на вход шестизначный номер билета и выводила, счастливый это билет или нет.К примеру, билеты 666 666 и 252 135 — счастливые, а 123 456 — нет.
+В старину, когда даже в столице билеты в общественном транспорте выдавали контролёры, существовало поверье : если на билете сумма первых трёх цифр в номере билета равна сумме трёх последних,
+то это к удаче.Напишите программу, которая получала бы на вход шестизначный номер билета и выводила, счастливый это билет или нет.К примеру, билеты 666 666 и 252 135 — счастливые, а 123 456 — нет.
 
 Пример выполнения
 
@@ -21,31 +22,47 @@
 
 int main()
 {
+	// количество цифр в номере билета
+	int numberLength = 6;
+	// множитель для разделения номера на две половины
+	int multiplierOfHalf = 1000;
 	
-	
-	
-	/*std::cout << "Введите имя должника: ";
-	std::string nameDebtor;
-	std::cin >> nameDebtor;
-	std::cout << "Введите сумму долга: ";
-	int totalDebt;
-	std::cin >> totalDebt;
+	std::cout << "Введите номер билета (" << numberLength << " цифр): ";
+	int ticketNumber;
+	std::cin >> ticketNumber;
 
+	// разделение числа на две половины
+	int leftHalfOfNumber = ticketNumber / multiplierOfHalf;
+	int rightHalfOfNumber = ticketNumber % multiplierOfHalf;
+
+	int leftSum = 0, rightSum = 0;
+
+	while (leftHalfOfNumber > 0) {
+		leftSum += leftHalfOfNumber % 10;
+		leftHalfOfNumber /= 10;
+		rightSum += rightHalfOfNumber % 10;
+		rightHalfOfNumber /= 10;
+	}
+	
+	
+	std::cout << leftSum << "\n";
+	std::cout << rightSum << "\n";
+
+
+
+	
+	/*
+	
+	
 	if (totalDebt < 0) { std::cout << "Сумма долга должна быть положительной!\n"; }
 
 	else {
-		while (totalDebt > 0) {
-			std::cout << "Осталось выплатить: " << totalDebt << "\n";
-			std::cout << "Введите сумму погашения: ";
-			int repaymentAmount;
-			std::cin >> repaymentAmount;
-			totalDebt -= repaymentAmount;
-		}
+		
 
 		int accountBalanse = 0;
 		if (totalDebt < 0) accountBalanse = abs(totalDebt);
 
-		std::cout << nameDebtor << " поздравляем! Вы погасили ваш долг.";
+		
 		if (accountBalanse != 0) std::cout << " На Вашем счету осталось: " << accountBalanse << "\n";
 	}*/
 
