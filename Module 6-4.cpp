@@ -21,7 +21,10 @@
 
 int main()
 {
-	std::cout << "Введите имя должника: ";
+	
+	
+	
+	/*std::cout << "Введите имя должника: ";
 	std::string nameDebtor;
 	std::cin >> nameDebtor;
 	std::cout << "Введите сумму долга: ";
@@ -44,7 +47,7 @@ int main()
 
 		std::cout << nameDebtor << " поздравляем! Вы погасили ваш долг.";
 		if (accountBalanse != 0) std::cout << " На Вашем счету осталось: " << accountBalanse << "\n";
-	}
+	}*/
 
 }
 
